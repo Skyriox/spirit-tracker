@@ -1,0 +1,58 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+html,
+body {
+  min-height: 100%;
+}
+
+body {
+  @apply font-body text-white;
+  background: radial-gradient(circle at 15% 10%, #2a1f5c 0%, transparent 45%),
+    radial-gradient(circle at 85% 0%, #0e2a4a 0%, transparent 40%),
+    radial-gradient(circle at 50% 100%, #1e0f42 0%, transparent 50%),
+    linear-gradient(180deg, #160f30 0%, #0d0821 100%);
+  background-attachment: fixed;
+  min-height: 100vh;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
+
+/* Focus visibility for accessibility, styled to match the playful theme */
+:focus-visible {
+  outline: 3px solid #22d3ee;
+  outline-offset: 2px;
+  border-radius: 8px;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(#7c3aed, #22d3ee);
+  border-radius: 999px;
+}
+
+.glass-panel {
+  @apply rounded-3xl border border-white/10 bg-white/5 backdrop-blur-xl;
+}
+
+.btn-pop {
+  @apply active:scale-95 transition-transform duration-150;
+}
